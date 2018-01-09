@@ -8,22 +8,22 @@ const blackLog = log.transform([
   str => `${str}`
 ]);
 
-const erectorLog = blackLog
-  .group('Erector')
+const logdockLog = blackLog
+  .group('Logdock')
   .transform(chalk.cyan);
 
-const always = erectorLog
+const always = logdockLog
   .transform(chalk.red);
 
 always('Static message');
 
-const pureLog = erectorLog
+const pureLog = logdockLog
   .config({
     hideEmpty: true,
   })
   .transform(chalk.green);
 
-const unpureLog = erectorLog
+const unpureLog = logdockLog
   .config({
     hideEmpty: false,
   })

@@ -8,11 +8,11 @@ const blackLog = log.transform([
   str => `${str}`
 ]);
 
-const erectorLog = blackLog
-  .group('Erector')
+const logdockLog = blackLog
+  .group('Logdock')
   .transform(chalk.cyan);
 
-const some = erectorLog
+const some = logdockLog
   .transform(chalk.red);
 
 let i = 1;
