@@ -1,0 +1,27 @@
+{
+  "name": "logdock",
+  "version": "0.1.0",
+  "description": "More advanced tool for creating animated CLI log",
+  "main": "lib/index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Please run manually every script in tests folder\" && exit 0"
+  },
+  "author": "Vladimir Morulus <vladimirmorulus@gmail.com",
+  "license": "MIT",
+  "dependencies": {
+    "lodash.throttle": "^4.1.1",
+    "log-update": "^2.3.0",
+    "to-string": "^0.2.0"
+  },
+  "devDependencies": {
+    "ansi-styles": "^3.2.0",
+    "babel-eslint": "^8.1.2",
+    "chalk": "^2.3.0",
+    "cli-spinners": "^1.1.0",
+    "eslint": "^4.14.0",
+    "eslint-config-nodejs": "^2.0.0"
+  }
+}
