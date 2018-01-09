@@ -1,15 +1,18 @@
 {
   "name": "logdock",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "More advanced tool for creating animated CLI log",
   "main": "lib/index.js",
   "directories": {
-    "lib": "lib"
+    "doc": "docs",
+    "example": "examples",
+    "lib": "lib",
+    "test": "tests"
   },
   "scripts": {
     "test": "echo \"Please run manually every script in tests folder\" && exit 0"
   },
-  "author": "Vladimir Morulus <vladimirmorulus@gmail.com",
+  "author": "Vladimir Morulus",
   "license": "MIT",
   "dependencies": {
     "lodash.throttle": "^4.1.1",
@@ -20,8 +23,17 @@
     "ansi-styles": "^3.2.0",
     "babel-eslint": "^8.1.2",
     "chalk": "^2.3.0",
+    "cine": "^0.1.0",
     "cli-spinners": "^1.1.0",
     "eslint": "^4.14.0",
     "eslint-config-nodejs": "^2.0.0"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/morulus/logdock.git"
+  },
+  "bugs": {
+    "url": "https://github.com/morulus/logdock/issues"
+  },
+  "homepage": "https://github.com/morulus/logdock#readme"
 }

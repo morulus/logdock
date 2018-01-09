@@ -1,5 +1,5 @@
 const log = require('../lib');
-const animate = require('../lib/animate');
+const cine = require('cine');
 const chalk = require('chalk');
 const Events = require('events');
 const cssCompiler = new Events();
@@ -38,11 +38,11 @@ jsCompiler.on('log', jsLog);
 
 const cliSpinners = require('cli-spinners');
 
-const watchingAnimation = animate(cliSpinners.dots.frames, 50);
+const watchingAnimation = cine(cliSpinners.dots.frames, 50);
 
-const processingAnimation = animate(cliSpinners.triangle.frames, 50);
+const processingAnimation = cine(cliSpinners.triangle.frames, 50);
 
-const mockScenario1 = animate([
+const mockScenario1 = cine([
   () => `Watching Css files ${watchingAnimation()}`,
   '5 files has changed',
   () => `Processing ${processingAnimation()}`
@@ -51,7 +51,7 @@ const mockScenario1 = animate([
 });
 
 let i = 0;
-const mockScenario2 = animate([
+const mockScenario2 = cine([
   () => `Watching Js files ${watchingAnimation()}`,
   '3 files has changed',
   () => `Processing ${processingAnimation()}`,

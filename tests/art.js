@@ -1,7 +1,7 @@
 const log = require('../lib');
-const animate = require('../lib/animate');
 const chalk = require('chalk');
 const style = require('ansi-styles');
+const cine = require('cine');
 const cliSpinners = require('cli-spinners');
 
 const blackLog = log.transform([
@@ -32,7 +32,7 @@ const countDownTimer = setInterval(() => {
   countdownLog(`${style.color.ansi256.rgb(120, Math.round(1.2 * (countdown / 10)), 72)}${countdown}%${style.color.close}`);
   if (countdown === 100) {
     clearInterval(countDownTimer);
-    countdownLog.getContext().write('Loaded');
+    countdownLog.getContext().write('Loaded').done();
   }
 }, 25);
 
@@ -47,11 +47,11 @@ const weatherLog = logdockLog
   .transform(chalk.yellow);
 
 /* =========== Animations =========== */
-const spinner = animate(['|', '/', '-', '\\'], 100);
-const volume = animate(cliSpinners.shark.frames, 200);
-const sova = animate(['@_@', '@v@', '-v-', '@v@', '-v-', '@v@', '@^@', '@v@', '@^@', '@v@'], 750);
+const spinner = cine(['|', '/', '-', '\\'], 100);
+const volume = cine(cliSpinners.shark.frames, 200);
+const sova = cine(['@_@', '@v@', '-v-', '@v@', '-v-', '@v@', '@^@', '@v@', '@^@', '@v@'], 750);
 const enikiFrames = ['Eniki', 'beniki', 'eli', 'vareniki'];
-const crazyDot = animate([
+const crazyDot = cine([
   '.',
   ' .',
   '  .',
@@ -81,7 +81,7 @@ const crazyDot = animate([
   '  .',
   ' .',
 ], 50);
-const weatherPic = animate(cliSpinners.weather.frames, 250);
+const weatherPic = cine(cliSpinners.weather.frames, 250);
 
 setInterval(() => {
   randomLog.getContext().write(`Random ${chalk.magentaBright(spinner())}`);
@@ -92,7 +92,7 @@ setInterval(() => {
 
 setTimeout(() => {
   const enikikLog = logdockLog.group(sova());
-  const eniki = animate(enikiFrames, 2000, () => {
+  const eniki = cine(enikiFrames, 2000, () => {
     enikikLog.destroy();
   });
   setInterval(() => {
