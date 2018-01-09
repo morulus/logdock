@@ -1,5 +1,7 @@
-logdock (0.0.1 beta)
+logdock
 ==
+
+**BETA!**
 
 More advanced tool for creating updatable CLI log, including loaders, spinners, progress bars, groups, etc.
 
