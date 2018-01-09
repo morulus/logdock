@@ -1,6 +1,6 @@
 {
   "name": "logdock",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "More advanced tool for creating animated CLI log",
   "main": "lib/index.js",
   "directories": {
