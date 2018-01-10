@@ -17,6 +17,8 @@
   "dependencies": {
     "lodash.throttle": "^4.1.1",
     "log-update": "^2.3.0",
+    "strip-ansi": "^4.0.0",
+    "through": "^2.3.8",
     "to-string": "^0.2.0"
   },
   "devDependencies": {

@@ -3,7 +3,7 @@ logdock
 
 **BETA!**
 
-More advanced tool for creating updatable CLI log, including loaders, spinners, progress bars, groups, etc.
+More advanced tool for creating updatable CLI log, including loaders, spinners, progress bars, groups, reports, etc.
 
 
 
@@ -13,21 +13,21 @@ Read [Usage](https://github.com/morulus/logdock/blob/master/docs/usage.md) to be
 
 #### **.transform**`(handler : function | array<func>) : func`
 
-Specify message transformer. The function handler accepts a message string and returns transformed message string. To keep together multiple transform logic it provides you to specify an array of transformers, which will be executed as flow.
+Specify message transformer. The handler accepts a message and returns transformed message. To keep together multiple transform logic should pass an array of transformers, which will be executed as a flow.
 
 ```js
 const log = require('logdock')
 const chalk = require('chalk')
 
 const beautyLog = log.transform([
-  message => ` ${message} `,
+  message => `[${message}]`,
   chalk.bgBlack.white,
 ]);
 ```
 
 #### `log.group` (name : string) : func
 
-Create new log function, which already have static left part.
+Create new log function, which already have static left part. Group has title, that usually is simple string. If group title must be styled, you may specify transform before.
 
 ```js
 const log = require('logdock')
@@ -41,7 +41,7 @@ const appLog = log
   .group('MyApp');
 ```
 
-You also can to specify transform at second argument.
+You also pass transform as second argument.
 
 ```js
 const appLog = log
@@ -53,7 +53,7 @@ const appLog = log
 
 #### `log.config(name)`
 
-Specify some config.  See [Config](#config) section for ditails.
+Configurate and create new log function.  See [Config options](#config)  for ditails.
 
 ```js
 const log = require('logdock')
@@ -96,7 +96,22 @@ const myLog = log.output(msg => console.log(msg));
 
 Using custom output handler makes `log.stdout` useless.
 
-#### `.done()`
+#### `.persist()`
+
+#### `.pipe`
+
+Link to the in-log pipe. Use it to translate any child-process stdout to the log.
+
+```js
+const child = spawn('node',  ['some-child-process.js')], {
+  stdio: [process.stdin, 'pipe', 'inherit']
+});
+
+child.stdout.pipe(childLog.stream);
+```
+
+
+#### `.done(lastMessage)`
 
 *Works only with default output!*
 
@@ -184,3 +199,7 @@ const summLog = log
 
 summLog('3'); // 1 + 2 = 3
 ```
+
+#### `streamStripEmptyTail` (default: true)
+
+Remove the trailing line breaks of outside stdout and stream chunks.
