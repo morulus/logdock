@@ -1,6 +1,6 @@
 {
   "name": "logdock",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "More advanced tool for creating animated CLI log",
   "main": "lib/index.js",
   "directories": {
@@ -20,15 +20,15 @@
     "pretty-error": "^2.1.1",
     "strip-ansi": "^4.0.0",
     "through": "^2.3.8",
-    "to-string": "^0.2.0"
+    "to-string": "^0.2.0",
+    "cine": "^0.1.0",
+    "chalk": "^2.3.0",
+    "cli-spinners": "^1.1.0",
+    "ansi-escapes": "^3.0.0",
+    "ansi-styles": "^3.2.0"
   },
   "devDependencies": {
-    "ansi-escapes": "^3.0.0",
-    "ansi-styles": "^3.2.0",
     "babel-eslint": "^8.1.2",
-    "chalk": "^2.3.0",
-    "cine": "^0.1.0",
-    "cli-spinners": "^1.1.0",
     "eslint": "^4.14.0",
     "eslint-config-nodejs": "^2.0.0"
   },
